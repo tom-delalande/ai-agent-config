@@ -12,7 +12,7 @@ RUN apt install -y \
 RUN npm install -g @openai/codex
 RUN npm install -g @github/copilot
 
-WORKDIR /dev
+WORKDIR /app
 
 ENTRYPOINT ["/bin/sh", "-c"]
 CMD ["sleep infinity"]

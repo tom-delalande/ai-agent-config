@@ -23,7 +23,8 @@ if [[ "$(docker ps -aq -f name=^${CONTAINER_NAME}$)" == "" ]]; then
   docker run \
     -d \
     --name $CONTAINER_NAME \
-    --volume "$DIRECTORY:/dev/$DIRECTORY" \
+    --volume "$DIRECTORY:/app" \
+    --volume "$HOME/.codex/auth.json:/root/.codex/auth.json" \
     ai-agent
 else
   # Check if it's stopped
